@@ -19032,53 +19032,26 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":53}],159:[function(require,module,exports){
 var React = require('react');
-var ListItem = require('./ListItem.jsx');
 
-var ingredients = [{ "id": 1, "text": "ham" }, { "id": 2, "text": "cheese" }, { "id": 3, "text": "potatoes" }];
-
-var List = React.createClass({
-  displayName: 'List',
+var HelloWorld = React.createClass({
+  displayName: 'HelloWorld',
 
   render: function () {
-    var listItems = ingredients.map(function (item) {
-      return React.createElement(ListItem, { key: item.id, ingredient: item.text });
-    });
-
     return React.createElement(
-      'ul',
+      'h1',
       null,
-      listItems
+      'Hello World!'
     );
   }
 });
 
-module.exports = List;
+module.exports = HelloWorld;
 
-},{"./ListItem.jsx":160,"react":158}],160:[function(require,module,exports){
-var React = require('react');
-var ListItem = React.createClass({
-  displayName: 'ListItem',
-
-  render: function () {
-    return React.createElement(
-      'li',
-      null,
-      React.createElement(
-        'h4',
-        null,
-        this.props.ingredient
-      )
-    );
-  }
-});
-
-module.exports = ListItem;
-
-},{"react":158}],161:[function(require,module,exports){
+},{"react":158}],160:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
-var List = require('./components/List.jsx');
+var HelloWorld = require('./components/HelloWorld.jsx');
 
-ReactDOM.render(React.createElement(List, null), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('hello'));
 
-},{"./components/List.jsx":159,"react":158,"react-dom":29}]},{},[161]);
+},{"./components/HelloWorld.jsx":159,"react":158,"react-dom":29}]},{},[160]);
